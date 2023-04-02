@@ -8,5 +8,4 @@ class Track:
     name: str
     preview: str
     link: str
-    duration: str
     duration_sec: int
