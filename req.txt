@@ -1,2 +1,2 @@
-pypresence==4.2.0
+git+https://github.com/qwertyquerty/pypresence.git@690320919144269885cb6c6be8c41d63a49365ec
 yandex-music==2.0.1
