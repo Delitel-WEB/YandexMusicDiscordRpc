@@ -1,8 +1,9 @@
-from pypresence import Presence
-from presence.YM import get_current_track
 from presence import cfg
-from time import sleep, time
 from presence.YM.track import Track
+from presence.YM import get_current_track
+from presence.YM.handlers import trackNotFoundHandler
+from pypresence import Presence
+from time import sleep, time
 
 trackTime: float = None
 lastTrack: Track = None
@@ -10,16 +11,16 @@ lastTrack: Track = None
 rpc = Presence(cfg.app_id)
 rpc.connect()
 
-
+@trackNotFoundHandler
 def main():
     global lastTrack, trackTime
 
     while True:
-        currentTime = time()
         currentTrack = get_current_track()
+        currentTime = time()
         if lastTrack != currentTrack:
             lastTrack = currentTrack
-            trackTime = time()
+            trackTime = currentTime
         remainingTime = int(currentTrack.duration_sec - (currentTime - trackTime))
         rpc.update(
             state=currentTrack.name,
@@ -29,7 +30,7 @@ def main():
             buttons=[{"label": "Слушать", "url": currentTrack.link}],
             end=currentTime + remainingTime
         )
-        sleep(1)
+        sleep(20)
 
 
 main()
