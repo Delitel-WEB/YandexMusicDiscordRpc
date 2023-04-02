@@ -28,3 +28,6 @@ export ym_key="AQAAAA123123123"
 app_id = 345345345345 # ID приложения Discord
 ym_id = "AQAAAA12312312" # ключ API Yandex Music
 ```
+
+Пример RPC:
+![RPC](images/example.png)
