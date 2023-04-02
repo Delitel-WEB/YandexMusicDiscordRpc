@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import List
 
+
 @dataclass
 class Track:
     artists: List[str]
@@ -8,3 +9,4 @@ class Track:
     preview: str
     link: str
     duration: str
+    duration_sec: int
