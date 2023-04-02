@@ -30,4 +30,5 @@ ym_id = "AQAAAA12312312" # ключ API Yandex Music
 ```
 
 Пример RPC:
+
 ![RPC](images/example.png)
