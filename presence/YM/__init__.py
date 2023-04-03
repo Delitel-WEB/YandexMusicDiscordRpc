@@ -15,7 +15,7 @@ def get_current_track():
     return Track(
         [artist.name for artist in aboutTrack.artists],
         aboutTrack.title,
-        "https://" + aboutTrack.cover_uri.replace("%%", "200x200"),
+        "https://" + aboutTrack.cover_uri.replace("%%", "1000x1000"),
         f"https://music.yandex.ru/album/{aboutTrack.albums[0].id}/track/{aboutTrack.id}",
         ms_to_sec(aboutTrack.duration_ms)
     )
